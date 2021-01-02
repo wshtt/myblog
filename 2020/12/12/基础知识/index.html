@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/myblog/uploads/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/myblog/uploads/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/myblog/uploads/favicon-16x16.png">
+  <link rel="mask-icon" href="/myblog/uploads/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/myblog/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wushutong.github.io","root":"/myblog/","images":"/myblog/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="基础知识[toc] 类class1.类与对象用来创建对象 1.class 类 的结构123456789101112131415161718&#x2F;&#x2F; 包名package com.example.controller;&#x2F;&#x2F; 引入的其他类import org.springframework.web.bind.annotation.RequestMapping;import org.springframewo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础">
+<meta property="og:url" content="https://wushutong.github.io/myblog/2020/12/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="凌晨一点">
+<meta property="og:description" content="基础知识[toc] 类class1.类与对象用来创建对象 1.class 类 的结构123456789101112131415161718&#x2F;&#x2F; 包名package com.example.controller;&#x2F;&#x2F; 引入的其他类import org.springframework.web.bind.annotation.RequestMapping;import org.springframewo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-02T02:00:55.658Z">
+<meta property="article:author" content="wst">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://wushutong.github.io/myblog/2020/12/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>java基础 | 凌晨一点</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/myblog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">凌晨一点</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记不起</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/myblog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/myblog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/myblog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/myblog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/myblog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-schedule"><a href="/myblog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/myblog/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/myblog/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BBclass"><span class="nav-number">1.0.1.</span> <span class="nav-text">类class</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">1.类与对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-class-%E7%B1%BB-%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.0.1.1.1.</span> <span class="nav-text">1.class 类 的结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E7%B1%BB%E4%BD%93%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">1.0.1.1.2.</span> <span class="nav-text">2.类体中的内容</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Java%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E2%80%93%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C"><span class="nav-number">1.0.1.1.3.</span> <span class="nav-text">3.Java程序执行–方法执行</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%BB%A7%E6%89%BFextends"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">2.继承extends</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E5%AD%90%E7%B1%BB%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%88%B6%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">1.0.1.2.1.</span> <span class="nav-text">1. 子类对象与父类对象的创建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E5%AD%90%E7%B1%BB%E7%BB%A7%E6%89%BF%E7%88%B6%E7%B1%BB%E7%9A%84%E7%A7%81%E6%9C%89%E6%88%90%E5%91%98%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BD%86%E6%98%AF%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AE%EF%BC%88private%EF%BC%89"><span class="nav-number">1.0.1.2.2.</span> <span class="nav-text">2.子类继承父类的私有成员属性和方法，但是不能访问（private）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%AD%90%E7%B1%BB%E9%87%8D%E5%86%99%E7%88%B6%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="nav-number">1.0.1.2.3.</span> <span class="nav-text">3.子类重写父类方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E6%B3%A8%E8%A7%A3-override"><span class="nav-number">1.0.1.2.4.</span> <span class="nav-text">4.注解 @override</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.0.1.2.5.</span> <span class="nav-text">5.this关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-super-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.0.1.2.6.</span> <span class="nav-text">6.super 关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-this-%E4%B8%8E-super-%E5%81%87%E5%A6%82%E6%AD%A4%E7%B1%BB%E6%89%BE%E4%B8%8D%E5%88%B0%E4%BC%9A%E5%8E%BB%E4%BB%96%E7%9A%84%E7%88%B6%E7%B1%BB%E5%AF%BB%E6%89%BE%EF%BC%88%E7%A9%BF%E9%80%8F%E6%80%A7%EF%BC%89"><span class="nav-number">1.0.1.2.7.</span> <span class="nav-text">7.this 与 super 假如此类找不到会去他的父类寻找（穿透性）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BA%A7%E7%BB%A7%E6%89%BF%EF%BC%8C%E5%8F%AA%E6%94%AF%E6%8C%81%E5%8D%95%E7%BB%A7%E6%89%BF"><span class="nav-number">1.0.1.2.8.</span> <span class="nav-text">8.支持多级继承，只支持单继承</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">3.抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.0.1.4.</span> <span class="nav-text">4.接口</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E5%AD%90%E7%B1%BB%E5%A4%9A%E5%AE%9E%E7%8E%B0%E6%8E%A5%E5%8F%A3%EF%BC%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B1%9E%E6%80%A7%E6%88%96%E8%80%85%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95%E9%87%8D%E5%A4%8D%EF%BC%88%E5%AE%9E%E7%8E%B0%E7%B1%BB%E5%AE%9E%E7%8E%B0%E6%8E%A5%E5%8F%A3%EF%BC%89"><span class="nav-number">1.0.1.4.0.1.</span> <span class="nav-text">1.子类多实现接口，接口的属性或者抽象方法重复（实现类实现接口）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E6%8E%A5%E5%8F%A3%E9%97%B4%E5%A4%9A%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB%EF%BC%8C%E7%88%B6%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B1%9E%E6%80%A7%E6%88%96%E8%80%85%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95%E9%87%8D%E5%A4%8D%EF%BC%88%E6%8E%A5%E5%8F%A3%E5%A4%9A%E7%BB%A7%E6%89%BF%E6%8E%A5%E5%8F%A3%EF%BC%89"><span class="nav-number">1.0.1.4.0.2.</span> <span class="nav-text">2.接口间多继承关系，父接口的属性或者抽象方法重复（接口多继承接口）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-%E5%AE%9E%E7%8E%B0%E7%B1%BB%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%B8%AA%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%90%8C%E6%97%B6%E7%BB%A7%E6%89%BF%E4%B8%80%E4%B8%AA%E6%8A%BD%E8%B1%A1%E7%B1%BB%EF%BC%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8E%A5%E5%8F%A3%E5%86%B2%E7%AA%81%EF%BC%88%EF%BC%89"><span class="nav-number">1.0.1.4.0.3.</span> <span class="nav-text">3.实现类实现多个接口，同时继承一个抽象类，抽象类与接口冲突（）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E5%A4%9A%E6%80%81"><span class="nav-number">1.0.1.5.</span> <span class="nav-text">5.多态</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%BD%AC%E5%9E%8B"><span class="nav-number">1.0.1.5.0.1.</span> <span class="nav-text">转型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">1.0.1.6.</span> <span class="nav-text">6.内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">1.0.1.6.0.1.</span> <span class="nav-text">1. 成员内部类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E5%B1%80%E9%83%A8%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">1.0.1.6.0.2.</span> <span class="nav-text">2.局部内部类</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">1.0.1.6.0.3.</span> <span class="nav-text">3.匿名内部类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fianl%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.0.1.7.</span> <span class="nav-text">fianl关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#static%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.0.1.8.</span> <span class="nav-text">static修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.0.1.9.</span> <span class="nav-text">访问权限修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">1.0.1.10.</span> <span class="nav-text">代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-%E6%9E%84%E9%80%A0%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">1.0.1.10.0.1.</span> <span class="nav-text">1.构造代码块</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-%E5%B1%80%E9%83%A8%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">1.0.1.10.0.2.</span> <span class="nav-text">2.局部代码块</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">1.0.1.10.0.3.</span> <span class="nav-text">3.静态代码块</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="wst"
+      src="/myblog/uploads/avatar.png">
+  <p class="site-author-name" itemprop="name">wst</p>
+  <div class="site-description" itemprop="description">床前明月光，疑是地上霜</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/myblog/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/myblog/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/myblog/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wushutong.github.io/myblog/2020/12/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/uploads/avatar.png">
+      <meta itemprop="name" content="wst">
+      <meta itemprop="description" content="床前明月光，疑是地上霜">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="凌晨一点">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-12-12 00:00:00" itemprop="dateCreated datePublished" datetime="2020-12-12T00:00:00+08:00">2020-12-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-02 10:00:55" itemprop="dateModified" datetime="2021-01-02T10:00:55+08:00">2021-01-02</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>[toc]</p>
+<h3 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h3><h4 id="1-类与对象"><a href="#1-类与对象" class="headerlink" title="1.类与对象"></a>1.类与对象</h4><p>用来创建对象</p>
+<h5 id="1-class-类-的结构"><a href="#1-class-类-的结构" class="headerlink" title="1.class 类 的结构"></a>1.class 类 的结构</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 包名</span></span><br><span class="line"><span class="keyword">package</span> com.example.controller;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入的其他类</span></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping(&quot;hello&quot;)</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="comment">// 权限修饰符+class+类名</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;1&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello!!!!!!!!!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+ <a id="more"></a> 
+
+<h5 id="2-类体中的内容"><a href="#2-类体中的内容" class="headerlink" title="2.类体中的内容"></a>2.类体中的内容</h5><ul>
+<li>成员属性（类的属性）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> String name;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>成员方法（类的功能方法）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;姓名&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>构造方法(创建对象时执行)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 空参构造</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 带参构造</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-Java程序执行–方法执行"><a href="#3-Java程序执行–方法执行" class="headerlink" title="3.Java程序执行–方法执行"></a>3.Java程序执行–方法执行</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	User user = <span class="keyword">new</span> User();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>main 方法入栈，然后依次执行main方法中的内容</li>
+<li>创建对象，对象储存在堆内存中，user 指向对象的对内存地址</li>
+<li></li>
+</ol>
+<h4 id="2-继承extends"><a href="#2-继承extends" class="headerlink" title="2.继承extends"></a>2.继承extends</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> <span class="keyword">extends</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>子类继承父类，同时继承父类的成员变量和成员方法，不会继承父类构造方法</p>
+<h5 id="1-子类对象与父类对象的创建"><a href="#1-子类对象与父类对象的创建" class="headerlink" title="1. 子类对象与父类对象的创建"></a>1. 子类对象与父类对象的创建</h5><p>创建子类对象的时候先执行了父类的构造方法，创建了父类对象。（子类构造方法中默认会调用父类无参构造）</p>
+<p>在操作子类对象时，子类有的成员变量和方法直接使用，假如子类中找不到，查找继承父类的成员属性和方法</p>
+<h5 id="2-子类继承父类的私有成员属性和方法，但是不能访问（private）"><a href="#2-子类继承父类的私有成员属性和方法，但是不能访问（private）" class="headerlink" title="2.子类继承父类的私有成员属性和方法，但是不能访问（private）"></a>2.子类继承父类的私有成员属性和方法，但是不能访问（private）</h5><h5 id="3-子类重写父类方法"><a href="#3-子类重写父类方法" class="headerlink" title="3.子类重写父类方法"></a>3.子类重写父类方法</h5><p>子类继承父类的方法，也可以重写父类的方法</p>
+<p>方法的重写：指的是方法名，返回值，参数一致</p>
+<p>子类重写父类方法时，子类方法的访问权限修饰符权限<code>&gt;=</code>父类方法的访问权限修饰符权限</p>
+<h5 id="4-注解-override"><a href="#4-注解-override" class="headerlink" title="4.注解 @override"></a>4.注解 <code>@override</code></h5><p>表明这是一个重写方法</p>
+<h5 id="5-this关键字"><a href="#5-this关键字" class="headerlink" title="5.this关键字"></a>5.this关键字</h5><ul>
+<li>this 关键字可以直接在类中访问本类的成员属性，成员方法，构造方法</li>
+<li><code>this();</code>放在有参构造的第一行会先调用本类的无参构造</li>
+<li><code>this(&quot;name&quot;);</code>放在构造方法第一行会先执行本类的指定有参构造</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 这个构造方法调用了无参构造</span></span><br><span class="line">        <span class="keyword">this</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="6-super-关键字"><a href="#6-super-关键字" class="headerlink" title="6.super 关键字"></a>6.super 关键字</h5><ul>
+<li>super 关键字访问父类的成员属性，成员方法，构造方法</li>
+<li>子类所有构造方法第一行默认添加了<code>super();</code></li>
+</ul>
+<h5 id="7-this-与-super-假如此类找不到会去他的父类寻找（穿透性）"><a href="#7-this-与-super-假如此类找不到会去他的父类寻找（穿透性）" class="headerlink" title="7.this 与 super 假如此类找不到会去他的父类寻找（穿透性）"></a>7.this 与 super 假如此类找不到会去他的父类寻找（穿透性）</h5><p>例如所有的类都继承了<code>Object</code>类，都可以使用<code>this.</code>调用<code>Object</code>类的方法</p>
+<h5 id="8-支持多级继承，只支持单继承"><a href="#8-支持多级继承，只支持单继承" class="headerlink" title="8.支持多级继承，只支持单继承"></a>8.支持多级继承，只支持单继承</h5><h4 id="3-抽象类"><a href="#3-抽象类" class="headerlink" title="3.抽象类"></a>3.抽象类</h4><ul>
+<li>不能new 对象</li>
+<li>可以被其他类继承</li>
+<li>被<code>abstract</code>修饰得类</li>
+<li>其中可以定义抽象方法</li>
+<li>具有构造方法（子类创建对象时调用，开辟内存空间）</li>
+<li>抽象类中的抽象方法必须被子类重写</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 抽象方法，不能有方法体，也就是大括号</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">getUser</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-接口"><a href="#4-接口" class="headerlink" title="4.接口"></a>4.接口</h4><ul>
+<li><p>接口比抽象类更加抽象</p>
+</li>
+<li><p>接口可以多实现</p>
+</li>
+<li><p>接口可以多继承其他接口</p>
+</li>
+<li><p><code>implements</code></p>
+</li>
+<li><p> 接口默认方法<code>default</code>关键字不可以省略</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itcast.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//1. 接口中所有变量都是常量，#默认添加了 public static final 修饰</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2. 普通方法都是抽象方法 #默认被 public abstract 修饰</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">getUserName</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3. 默认方法有方法体，default不可以省略，被子类继承时可以重写，也可以不重写 #默认 public 修饰</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">default</span> String <span class="title">getUserAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//4. 静态方法有方法体，只属于接口本身，不能被继承和重写 #默认 public 修饰</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getAddress</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="1-子类多实现接口，接口的属性或者抽象方法重复（实现类实现接口）"><a href="#1-子类多实现接口，接口的属性或者抽象方法重复（实现类实现接口）" class="headerlink" title="1.子类多实现接口，接口的属性或者抽象方法重复（实现类实现接口）"></a>1.子类多实现接口，接口的属性或者抽象方法重复（实现类实现接口）</h6><p>1.常量冲突，子类不会继承此常量（接口的变量都是fianl 修饰）</p>
+<p>2.抽象方法冲突，子类直接重写即可</p>
+<p>3.默认方法冲突，必须重写</p>
+<p>4.静态方法冲突，静态方法属于本类，冲突无影响</p>
+<h6 id="2-接口间多继承关系，父接口的属性或者抽象方法重复（接口多继承接口）"><a href="#2-接口间多继承关系，父接口的属性或者抽象方法重复（接口多继承接口）" class="headerlink" title="2.接口间多继承关系，父接口的属性或者抽象方法重复（接口多继承接口）"></a>2.接口间多继承关系，父接口的属性或者抽象方法重复（接口多继承接口）</h6><p>1.常量冲突，子类不会继承此常量</p>
+<p>2.抽象方法冲突，冲突的抽象方法是一样的</p>
+<p>3.默认方法冲突，重写方法</p>
+<p>4.静态方法冲突。不影响</p>
+<h6 id="3-实现类实现多个接口，同时继承一个抽象类，抽象类与接口冲突（）"><a href="#3-实现类实现多个接口，同时继承一个抽象类，抽象类与接口冲突（）" class="headerlink" title="3.实现类实现多个接口，同时继承一个抽象类，抽象类与接口冲突（）"></a>3.实现类实现多个接口，同时继承一个抽象类，抽象类与接口冲突（）</h6><p>1.常量冲突，子类不会继承接口常量，可以继承抽象类的属性。（没遇到过，待查找资料）</p>
+<p>2.父类方法与接口方法一致时，子类继承父类方法</p>
+<p>3.父类默认方法与接口默认方法一致，继承父类的方法</p>
+<p>4.静态方法不能被继承</p>
+<h4 id="5-多态"><a href="#5-多态" class="headerlink" title="5.多态"></a>5.多态</h4><p>父类的引用指向子类的对象</p>
+<p>使用父类类型接受子类的对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Map 接受 HashMap</span></span><br><span class="line">Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;(); </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 创建对象给对象赋值</span></span><br><span class="line">Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 形参</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUser</span><span class="params">(Map&lt;String, Object&gt; map)</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 返回值多态</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Long&gt; <span class="title">getUser</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;Long&gt;();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>特点：</strong></p>
+<ul>
+<li>多态不会访问子类特有的属性和方法，因为对象时父类的对象，只能访问父类有的方法</li>
+<li>父类与子类同名属性，访问的是父类属性</li>
+<li>子类重写了父类的方法，则访问的是子类重写的方法</li>
+</ul>
+<h6 id="转型"><a href="#转型" class="headerlink" title="转型"></a>转型</h6><ol>
+<li>向上转型</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Object&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List l = list;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>向下转型</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Object&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">if</span> (list <span class="keyword">instanceof</span> ArrayList)&#123;</span><br><span class="line">    ArrayList l = (ArrayList) list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-内部类"><a href="#6-内部类" class="headerlink" title="6.内部类"></a>6.内部类</h4><ul>
+<li>在类的内部定义的一个类</li>
+<li>内部类编译也会生出class 文件</li>
+</ul>
+<h6 id="1-成员内部类"><a href="#1-成员内部类" class="headerlink" title="1. 成员内部类"></a>1. 成员内部类</h6><p>放在成员属性的位置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 成员内部类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> age;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">            <span class="comment">// 方法中的a=1就近原则</span></span><br><span class="line">            System.out.println(a);</span><br><span class="line">            <span class="comment">// 内部类中的a=2</span></span><br><span class="line">            System.out.println(<span class="keyword">this</span>.a);</span><br><span class="line">            <span class="comment">// 外部类的a=3</span></span><br><span class="line">            System.out.println(User.<span class="keyword">this</span>.a);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用内部类属性</span></span><br><span class="line">User.People p = <span class="keyword">new</span> User().<span class="function">new <span class="title">People</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// </span></span><br></pre></td></tr></table></figure>
+
+<h6 id="2-局部内部类"><a href="#2-局部内部类" class="headerlink" title="2.局部内部类"></a>2.局部内部类</h6><p>放在局部属性的位置（方法中）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">// 局部内部类</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">                <span class="comment">// 局部内部类访问外部类的属性，外部类属性将转为fianl 修饰的。</span></span><br><span class="line">                System.out.println(name);</span><br><span class="line">                <span class="comment">// 第二层</span></span><br><span class="line">                <span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>局部内部类可以无限嵌套，因为这只是一个方法，不嫌累就可以一直写。</li>
+<li>局部内部类访问外部类的属性，外部类属性将默认转为fianl 修饰的常量。此变量被fianl 修饰后值无法改变。（lambda 中 foreach 中外部类属性必须为fianl）</li>
+</ul>
+<h6 id="3-匿名内部类"><a href="#3-匿名内部类" class="headerlink" title="3.匿名内部类"></a>3.匿名内部类</h6><p>局部内部类的匿名子类对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. Thread 类</span></span><br><span class="line"><span class="keyword">new</span> Thread(Runnable run);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. Runnable 接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 直接简写Runnable 的实现类</span></span><br><span class="line"><span class="keyword">new</span> Thread(</span><br><span class="line">    <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="fianl关键字"><a href="#fianl关键字" class="headerlink" title="fianl关键字"></a>fianl关键字</h4><p>1.修饰类</p>
+<p>修饰的类不能被继承，即不可修饰抽象类与接口</p>
+<p>2.修饰成员方法</p>
+<p>修饰的方法不能被重写，不能修饰抽象方法与接口方法</p>
+<p>3.修饰成员变量</p>
+<p>成员变量值不可变，不能被修改。fianl指定变量绑定内存地址，不可更改。</p>
+<p>4.修饰局部变量</p>
+<p>成员变量值不可变，不能被修改。fianl指定变量绑定内存地址，不可更改。</p>
+<h4 id="static修饰符"><a href="#static修饰符" class="headerlink" title="static修饰符"></a>static修饰符</h4><p>1.修饰成员属性</p>
+<p>此类的此成员属性在类加载时被加载到静态存储区，此类的所有对象共同使用此类存放在静态存储区的属性。</p>
+<p>（静态存储区存在于方法区之中）</p>
+<p>2.修饰成员方法</p>
+<p>静态方法</p>
+<p>3.静态代码块</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="comment">// 多用于给静态成员赋值，在类加载的时候加载，只在类加载的时候执行一次</span></span><br><span class="line">    <span class="comment">// 多用于定义全局变量，做工具类</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="访问权限修饰符"><a href="#访问权限修饰符" class="headerlink" title="访问权限修饰符"></a>访问权限修饰符</h4><table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>修饰类</th>
+<th>成员变量</th>
+<th>成员方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>共有的（本项目所有包可以访问）</td>
+<td>本项目都可以访问</td>
+<td></td>
+</tr>
+<tr>
+<td>default</td>
+<td>默认的（同包以及本包的子包）</td>
+<td>同一包下都可以访问</td>
+<td></td>
+</tr>
+<tr>
+<td>protected</td>
+<td></td>
+<td>可以被继承</td>
+<td></td>
+</tr>
+<tr>
+<td>private</td>
+<td></td>
+<td>只在本类</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><h6 id="1-构造代码块"><a href="#1-构造代码块" class="headerlink" title="1.构造代码块"></a>1.构造代码块</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造方法的位置</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;g构造代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    People()&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;构造方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>构造代码块先于构造方法执行</p>
+<h6 id="2-局部代码块"><a href="#2-局部代码块" class="headerlink" title="2.局部代码块"></a>2.局部代码块</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 静态成员属性的位置</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;静态代码块&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类加载的时候执行，一般用于给静态属性赋值</p>
+<h6 id="3-静态代码块"><a href="#3-静态代码块" class="headerlink" title="3.静态代码块"></a>3.静态代码块</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 局部变量的位置，方法中</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;局部代码块&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>局部代码块执行结束后，直接被垃圾回收。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/myblog/2020/12/12/%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB/" rel="prev" title="基础 CLASS">
+                  <i class="fa fa-chevron-left"></i> 基础 CLASS
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/myblog/2020/12/12/hexo/" rel="next" title="hexo">
+                  hexo <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>简体中文</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="">
+      
+        <option value="zh-CN" data-href="/myblog/2020/12/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/myblog/en/2020/12/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wst</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/myblog/js/utils.js"></script><script src="/myblog/js/motion.js"></script><script src="/myblog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

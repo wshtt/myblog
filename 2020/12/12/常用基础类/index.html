@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/myblog/uploads/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/myblog/uploads/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/myblog/uploads/favicon-16x16.png">
+  <link rel="mask-icon" href="/myblog/uploads/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/myblog/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wushutong.github.io","root":"/myblog/","images":"/myblog/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="基础 CLASS[toc] 一、Object  java.lang.Object Object 是类层次结构的根类。每个类都使用 Object  作为超类。所有对象（包括数组）都实现这个类的方法。  方法toString">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础 CLASS">
+<meta property="og:url" content="https://wushutong.github.io/myblog/2020/12/12/%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB/index.html">
+<meta property="og:site_name" content="凌晨一点">
+<meta property="og:description" content="基础 CLASS[toc] 一、Object  java.lang.Object Object 是类层次结构的根类。每个类都使用 Object  作为超类。所有对象（包括数组）都实现这个类的方法。  方法toString">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-02T02:00:55.659Z">
+<meta property="article:author" content="wst">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://wushutong.github.io/myblog/2020/12/12/%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>基础 CLASS | 凌晨一点</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/myblog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">凌晨一点</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">记不起</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/myblog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/myblog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/myblog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/myblog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/myblog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-schedule"><a href="/myblog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/myblog/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+        <li class="menu-item menu-item-commonweal"><a href="/myblog/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80-CLASS"><span class="nav-number">1.</span> <span class="nav-text">基础 CLASS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81Object"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、Object</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">1.0.1.0.1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#toString-NaN"><span class="nav-number">1.0.1.0.1.1.</span> <span class="nav-text">toString</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#notify"><span class="nav-number">1.0.1.0.1.2.</span> <span class="nav-text">notify</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#notifyAll"><span class="nav-number">1.0.1.0.1.3.</span> <span class="nav-text">notifyAll</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#wait"><span class="nav-number">1.0.1.0.1.4.</span> <span class="nav-text">wait</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#finalize"><span class="nav-number">1.0.1.0.1.5.</span> <span class="nav-text">finalize</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#hashCode"><span class="nav-number">1.0.1.0.1.6.</span> <span class="nav-text">hashCode</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#equals"><span class="nav-number">1.0.1.0.1.7.</span> <span class="nav-text">equals</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Objects"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、Objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81Date"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、Date</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-number">1.0.3.0.1.</span> <span class="nav-text">构造方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Date"><span class="nav-number">1.0.3.0.1.1.</span> <span class="nav-text">Date()</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-1"><span class="nav-number">1.0.3.0.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#after"><span class="nav-number">1.0.3.0.2.1.</span> <span class="nav-text">after</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#before"><span class="nav-number">1.0.3.0.2.2.</span> <span class="nav-text">before</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#equals-1"><span class="nav-number">1.0.3.0.2.3.</span> <span class="nav-text">equals</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#compareTo"><span class="nav-number">1.0.3.0.2.4.</span> <span class="nav-text">compareTo</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#toString"><span class="nav-number">1.0.3.0.2.5.</span> <span class="nav-text">toString</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#setTime"><span class="nav-number">1.0.3.0.2.6.</span> <span class="nav-text">setTime</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81SimpleDateFormat"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、SimpleDateFormat</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95-1"><span class="nav-number">1.0.4.0.1.</span> <span class="nav-text">构造方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#SimpleDateFormat"><span class="nav-number">1.0.4.0.1.1.</span> <span class="nav-text">SimpleDateFormat</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#DateFormat-getInstance"><span class="nav-number">1.0.4.0.1.2.</span> <span class="nav-text">DateFormat getInstance</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SimpleDateFormat-1"><span class="nav-number">1.0.4.0.1.3.</span> <span class="nav-text">SimpleDateFormat</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-2"><span class="nav-number">1.0.4.0.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#format"><span class="nav-number">1.0.4.0.2.1.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#parse"><span class="nav-number">1.0.4.0.2.2.</span> <span class="nav-text">parse</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81Calendar"><span class="nav-number">1.0.5.</span> <span class="nav-text">五、Calendar</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-3"><span class="nav-number">1.0.5.0.1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#getInstance"><span class="nav-number">1.0.5.0.1.1.</span> <span class="nav-text">getInstance</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#add"><span class="nav-number">1.0.5.0.1.2.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#after-1"><span class="nav-number">1.0.5.0.1.3.</span> <span class="nav-text">after</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#before-1"><span class="nav-number">1.0.5.0.1.4.</span> <span class="nav-text">before</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#compareTo-1"><span class="nav-number">1.0.5.0.1.5.</span> <span class="nav-text">compareTo</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#get"><span class="nav-number">1.0.5.0.1.6.</span> <span class="nav-text">get</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#getTime"><span class="nav-number">1.0.5.0.1.7.</span> <span class="nav-text">getTime</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#getTimeInMillis"><span class="nav-number">1.0.5.0.1.8.</span> <span class="nav-text">getTimeInMillis</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#set"><span class="nav-number">1.0.5.0.1.9.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#setTime-1"><span class="nav-number">1.0.5.0.1.10.</span> <span class="nav-text">setTime</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81Math"><span class="nav-number">1.0.6.</span> <span class="nav-text">六、Math</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-4"><span class="nav-number">1.0.6.0.1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#abs"><span class="nav-number">1.0.6.0.1.1.</span> <span class="nav-text">abs</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#max"><span class="nav-number">1.0.6.0.1.2.</span> <span class="nav-text">max</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#min"><span class="nav-number">1.0.6.0.1.3.</span> <span class="nav-text">min</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#multiplyExact"><span class="nav-number">1.0.6.0.1.4.</span> <span class="nav-text">multiplyExact</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ceil"><span class="nav-number">1.0.6.0.1.5.</span> <span class="nav-text">ceil</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#floor"><span class="nav-number">1.0.6.0.1.6.</span> <span class="nav-text">floor</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#pow"><span class="nav-number">1.0.6.0.1.7.</span> <span class="nav-text">pow</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#round"><span class="nav-number">1.0.6.0.1.8.</span> <span class="nav-text">round</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83%E3%80%81System"><span class="nav-number">1.0.7.</span> <span class="nav-text">七、System</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-5"><span class="nav-number">1.0.7.0.1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#currentTimeMillis"><span class="nav-number">1.0.7.0.1.1.</span> <span class="nav-text">currentTimeMillis</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#exit"><span class="nav-number">1.0.7.0.1.2.</span> <span class="nav-text">exit</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#gc"><span class="nav-number">1.0.7.0.1.3.</span> <span class="nav-text">gc</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#arraycopy"><span class="nav-number">1.0.7.0.1.4.</span> <span class="nav-text">arraycopy</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB%E3%80%81BigDecimal"><span class="nav-number">1.0.8.</span> <span class="nav-text">八、BigDecimal</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9E%84%E9%80%A0"><span class="nav-number">1.0.8.0.1.</span> <span class="nav-text">构造</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#BigDecimal"><span class="nav-number">1.0.8.0.1.1.</span> <span class="nav-text">BigDecimal</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%95-6"><span class="nav-number">1.0.8.0.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#abs-1"><span class="nav-number">1.0.8.0.2.1.</span> <span class="nav-text">abs</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#add-1"><span class="nav-number">1.0.8.0.2.2.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#compareTo-2"><span class="nav-number">1.0.8.0.2.3.</span> <span class="nav-text">compareTo</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#divide"><span class="nav-number">1.0.8.0.2.4.</span> <span class="nav-text">divide</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#max-1"><span class="nav-number">1.0.8.0.2.5.</span> <span class="nav-text">max</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#min-1"><span class="nav-number">1.0.8.0.2.6.</span> <span class="nav-text">min</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#subtract"><span class="nav-number">1.0.8.0.2.7.</span> <span class="nav-text">subtract</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="wst"
+      src="/myblog/uploads/avatar.png">
+  <p class="site-author-name" itemprop="name">wst</p>
+  <div class="site-description" itemprop="description">床前明月光，疑是地上霜</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/myblog/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/myblog/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/myblog/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wushutong.github.io/myblog/2020/12/12/%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myblog/uploads/avatar.png">
+      <meta itemprop="name" content="wst">
+      <meta itemprop="description" content="床前明月光，疑是地上霜">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="凌晨一点">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基础 CLASS
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-12-12 00:00:00" itemprop="dateCreated datePublished" datetime="2020-12-12T00:00:00+08:00">2020-12-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-02 10:00:55" itemprop="dateModified" datetime="2021-01-02T10:00:55+08:00">2021-01-02</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="基础-CLASS"><a href="#基础-CLASS" class="headerlink" title="基础 CLASS"></a>基础 CLASS</h1><p>[toc]</p>
+<h3 id="一、Object"><a href="#一、Object" class="headerlink" title="一、Object"></a>一、Object</h3><p>  <strong>java.lang.Object</strong></p>
+<p><code>Object</code> 是类层次结构的根类。每个类都使用 <code>Object</code>  作为超类。所有对象（包括数组）都实现这个类的方法。 </p>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><h6 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h6> <a id="more"></a> 
+
+<ul>
+<li><p>Object 类的 toString 方法返回一个字符串</p>
+</li>
+<li><p>返回值：<code>getClass().getName() + &#39;@&#39; + Integer.toHexString(hashCode())</code></p>
+</li>
+<li><p>类的完全限定名（src之下的所有级别）+@ + 此对象哈希码的无符号十六进制表示</p>
+</li>
+<li><p>建议重写此方法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="notify"><a href="#notify" class="headerlink" title="notify"></a>notify</h6><ul>
+<li>随机唤醒在此对象上等待的线程</li>
+<li></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">notify</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="notifyAll"><a href="#notifyAll" class="headerlink" title="notifyAll"></a>notifyAll</h6><ul>
+<li>唤醒在此对象监视器上等待的所有线程</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">notifyAll</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="wait"><a href="#wait" class="headerlink" title="wait"></a>wait</h6><ul>
+<li>timeout - 要等待的最长时间（以毫秒为单位）。</li>
+<li>线程等待指定时长</li>
+<li>如果为0则只能等待notify或者notifyAll唤醒</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">long</span> timeout)</span> <span class="keyword">throws</span> InterruptedException</span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="finalize"><a href="#finalize" class="headerlink" title="finalize"></a>finalize</h6><ul>
+<li>当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。进行内存释放。</li>
+<li></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span></span></span><br><span class="line"><span class="function">                 <span class="keyword">throws</span> Throwable</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode"></a>hashCode</h6><ul>
+<li>返回该对象的哈希码值。支持此方法是为了提高哈希表（例如 java.util.Hashtable 提供的哈希表）的性能。</li>
+<li>在 Java 应用程序执行期间，在对同一对象多次调用 hashCode 方法时，必须一致地返回相同的整数</li>
+<li>如果根据 equals(java.lang.Object) 方法，两个对象不相等，那么对这两个对象中的任一对象上调用 hashCode 方法不 要求一定生成不同的整数结果</li>
+<li>如果根据 equals(Object) 方法，两个对象是相等的，那么对这两个对象中的每个对象调用 hashCode 方法都必须生成相同的整数结果。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h6><ul>
+<li>自反性：对于任何非空引用值 x，x.equals(x) 都应返回 true。 </li>
+<li>对称性：对于任何非空引用值 x 和 y，当且仅当 y.equals(x) 返回 true 时，x.equals(y) 才应返回 true。 </li>
+<li>传递性：对于任何非空引用值 x、y 和 z，如果 x.equals(y) 返回 true，并且 y.equals(z) 返回 true，那么 x.equals(z) 应返回 true。 </li>
+<li>一致性：对于任何非空引用值 x 和 y，多次调用 x.equals(y) 始终返回 true 或始终返回 false</li>
+<li>对于任何非空引用值 x，x.equals(null) 都应返回 false。</li>
+<li>默认的equals 方法比较的是内存地址</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="二、Objects"><a href="#二、Objects" class="headerlink" title="二、Objects"></a>二、Objects</h3><p><strong>java.util.Objects</strong> </p>
+<ul>
+<li>Objects的工具类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Objects</span> <span class="keyword">extends</span> <span class="title">Object</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="三、Date"><a href="#三、Date" class="headerlink" title="三、Date"></a>三、Date</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object </span><br><span class="line">	java.util.Date </span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dateextends</span> <span class="title">Objectimplements</span> <span class="title">Serializable</span>, <span class="title">Cloneable</span>, <span class="title">Comparable</span>&lt;<span class="title">Date</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> <code>Date</code> 表示特定的瞬间，精确到毫秒。</p>
+<h5 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h5><h6 id="Date"><a href="#Date" class="headerlink" title="Date()"></a>Date()</h6><ul>
+<li>创建一个当前时间的Date 对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Date</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>分配一个 <code>Date</code>对象，并将其初始化为表示从标准基准时间（称为“时代”）即1970年1月1日00:00:00 GMT起的指定毫秒数。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Date</span><span class="params">(<span class="keyword">long</span> date)</span></span></span><br></pre></td></tr></table></figure>
+
+
+<h5 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h5><h6 id="after"><a href="#after" class="headerlink" title="after"></a>after</h6><ul>
+<li>测试此日期是否在指定日期之后。 晚则返回true</li>
+<li>NullPointerException - 如果 when为空。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">after</span><span class="params">(Date when)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="before"><a href="#before" class="headerlink" title="before"></a>before</h6><ul>
+<li>测试此日期是否在指定日期之前</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">before</span><span class="params">(Date when)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="equals-1"><a href="#equals-1" class="headerlink" title="equals"></a>equals</h6><ul>
+<li>当且仅当<code>getTime</code>方法返回相同的<code>long</code>值时，两个<code>Date</code>对象相等</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="compareTo"><a href="#compareTo" class="headerlink" title="compareTo"></a>compareTo</h6><ul>
+<li>如果参数Date等于此Date，则值为0 ; </li>
+<li>如果此日期在Date参数之前，该值小于0 ; </li>
+<li>如果此日期在Date参数0则值大于0</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Date anotherDate)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="toString"><a href="#toString" class="headerlink" title="toString"></a>toString</h6><ul>
+<li><p>Date对象转换为String的形式：</p>
+</li>
+<li><p><code>dow mon dd hh:mm:ss zzz yyyy</code></p>
+</li>
+<li><p><code>dow</code>是星期几（ <code>Sun, Mon, Tue, Wed, Thu, Fri, Sat</code> ）。  </p>
+</li>
+<li><p><code>mon</code>是月（ <code>Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct,  Nov, Dec</code> ）。  </p>
+</li>
+<li><p><code>dd</code>是一个月的日子（ <code>01</code>到<code>31</code> ），作为两位十进制数字。  </p>
+</li>
+<li><p><code>hh</code>是一天的小时（ <code>00</code>到<code>23</code> ），作为两位十进制数字。  </p>
+</li>
+<li><p><code>mm</code>是一小时内的分钟（ <code>00</code>至<code>59</code> ），为两位十进制数字。  </p>
+</li>
+<li><p><code>ss</code>是分钟内的第二个（ <code>00</code>到<code>61</code> ，作为两位十进制数字。  </p>
+</li>
+<li><p><code>zzz</code>是时区（可能反映夏令时）。 标准时区缩写包括通过方法<code>parse识别的缩写</code>  。 如果时区信息不可用，那么<code>zzz</code>是空的 - 也就是说，它根本没有字符。  </p>
+</li>
+<li><p><code>年份</code>为<code>yyyy</code> ，为四位十进制数字。 </p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="setTime"><a href="#setTime" class="headerlink" title="setTime"></a>setTime</h6><ul>
+<li>设置此 Date对象以表示1970年1月1日00:00:00 GMT后的 time毫秒的时间点</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTime</span><span class="params">(<span class="keyword">long</span> time)</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="四、SimpleDateFormat"><a href="#四、SimpleDateFormat" class="headerlink" title="四、SimpleDateFormat"></a>四、SimpleDateFormat</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object </span><br><span class="line">	java.text.Format </span><br><span class="line">		java.text.DateFormat </span><br><span class="line">			java.text.SimpleDateFormat </span><br></pre></td></tr></table></figure>
+
+<p>日期格式化类</p>
+<h5 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h5><h6 id="SimpleDateFormat"><a href="#SimpleDateFormat" class="headerlink" title="SimpleDateFormat"></a>SimpleDateFormat</h6><ul>
+<li>获取 SimpleDateFormat 对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">SimpleDateFormat</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="DateFormat-getInstance"><a href="#DateFormat-getInstance" class="headerlink" title="DateFormat getInstance"></a>DateFormat getInstance</h6><ul>
+<li>获取 DateFormat 对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> DateFormat <span class="title">getInstance</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="SimpleDateFormat-1"><a href="#SimpleDateFormat-1" class="headerlink" title="SimpleDateFormat"></a>SimpleDateFormat</h6><ul>
+<li>pattern，<code>yyyy-MM-dd HH:mm:ss</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">SimpleDateFormat</span><span class="params">(String pattern)</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h5><h6 id="format"><a href="#format" class="headerlink" title="format"></a>format</h6><ul>
+<li>将日期格式化成日期/时间字符串。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> String <span class="title">format</span><span class="params">(Date date)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="parse"><a href="#parse" class="headerlink" title="parse"></a>parse</h6><ul>
+<li>将字符串转换成Date 对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Date <span class="title">parse</span><span class="params">(String source)</span></span></span><br><span class="line"><span class="function">           <span class="keyword">throws</span> ParseException</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="五、Calendar"><a href="#五、Calendar" class="headerlink" title="五、Calendar"></a>五、Calendar</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object </span><br><span class="line">	java.util.Calendar </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>Calendar</code>对象可以产生实现特定语言和日历风格的日期时间格式化所需的所有日历字段值</p>
+</li>
+<li><p>进行日期计算</p>
+</li>
+</ul>
+<p>构造</p>
+<h5 id="方法-3"><a href="#方法-3" class="headerlink" title="方法"></a>方法</h5><h6 id="getInstance"><a href="#getInstance" class="headerlink" title="getInstance"></a>getInstance</h6><ul>
+<li>使用默认时区和区域设置获取日历。 Calendar返回的是基于默认时区的当前时间，默认为FORMAT区域设置。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Calendar <span class="title">getInstance</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h6 id="add"><a href="#add" class="headerlink" title="add"></a>add</h6><ul>
+<li>根据日历的规则，将指定的时间量添加或减去给定的日历字段。 例如，要从当前日历的时间减去5天，您可以通过调用以下方法来实现： </li>
+<li>add(Calendar.DAY_OF_MONTH, -5) 。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> field,</span></span></span><br><span class="line"><span class="function"><span class="params">                         <span class="keyword">int</span> amount)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="after-1"><a href="#after-1" class="headerlink" title="after"></a>after</h6><ul>
+<li>Calendar 对象在when之后，true</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">after</span><span class="params">(Object when)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="before-1"><a href="#before-1" class="headerlink" title="before"></a>before</h6><ul>
+<li>Calendar 对象在when之前，true</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">before</span><span class="params">(Object when)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="compareTo-1"><a href="#compareTo-1" class="headerlink" title="compareTo"></a>compareTo</h6><ul>
+<li>如果所述参数表示的时间等于对象表示的时间Calendar，值0 ; </li>
+<li>如果此时Calendar是由参数表示的时间之前，值小于0; </li>
+<li>如果Calendar的时间在参数表示的时间之后，则值大于0 。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Calendar anotherCalendar)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="get"><a href="#get" class="headerlink" title="get"></a>get</h6><ul>
+<li>返回给定日历字段的值。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> field)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="getTime"><a href="#getTime" class="headerlink" title="getTime"></a>getTime</h6><ul>
+<li>转换为 Date 对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Date <span class="title">getTime</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="getTimeInMillis"><a href="#getTimeInMillis" class="headerlink" title="getTimeInMillis"></a>getTimeInMillis</h6><ul>
+<li>当前时间为UTC的毫秒数。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getTimeInMillis</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="set"><a href="#set" class="headerlink" title="set"></a>set</h6><ul>
+<li>设置值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> field,<span class="keyword">int</span> value)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month, <span class="keyword">int</span> date)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month, <span class="keyword">int</span> date,<span class="keyword">int</span> hourOfDay, <span class="keyword">int</span> minute)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> month,<span class="keyword">int</span> date,<span class="keyword">int</span> hourOfDay,<span class="keyword">int</span> minute,<span class="keyword">int</span> second)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="comment">// 设置字段中的值YEAR ， MONTH ， DAY_OF_MONTH ， HOUR_OF_DAY ， MINUTE和SECOND  保留其他字段的以前的值</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="setTime-1"><a href="#setTime-1" class="headerlink" title="setTime"></a>setTime</h6><ul>
+<li>使用给定的Date设置此日历的时间。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setTime</span><span class="params">(Date date)</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="六、Math"><a href="#六、Math" class="headerlink" title="六、Math"></a>六、Math</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object </span><br><span class="line">	java.lang.Math </span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Mathextends</span> <span class="title">Object</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Math类包含执行基本数字运算的方法，如基本指数，对数，平方根和三角函数。 </li>
+<li>Math 只是一个工具类</li>
+</ul>
+<h5 id="方法-4"><a href="#方法-4" class="headerlink" title="方法"></a>方法</h5><h6 id="abs"><a href="#abs" class="headerlink" title="abs"></a>abs</h6><ul>
+<li>返回绝对值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">abs</span><span class="params">(<span class="keyword">double</span> a)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">float</span> <span class="title">abs</span><span class="params">(<span class="keyword">float</span> a)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">abs</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">abs</span><span class="params">(<span class="keyword">long</span> a)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="max"><a href="#max" class="headerlink" title="max"></a>max</h6><ul>
+<li>返回最大值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">max</span><span class="params">(<span class="keyword">double</span> a,</span></span></span><br><span class="line"><span class="function"><span class="params">                         <span class="keyword">double</span> b)</span></span></span><br><span class="line"><span class="function">    </span></span><br></pre></td></tr></table></figure>
+
+<h6 id="min"><a href="#min" class="headerlink" title="min"></a>min</h6><ul>
+<li>返回最小值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> a,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="keyword">int</span> b)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="multiplyExact"><a href="#multiplyExact" class="headerlink" title="multiplyExact"></a>multiplyExact</h6><ul>
+<li>multiplyExact返回参数的乘积，如果结果溢出int，则抛出 int 。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">multiplyExact</span><span class="params">(<span class="keyword">int</span> x,</span></span></span><br><span class="line"><span class="function"><span class="params">                                <span class="keyword">int</span> y)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="ceil"><a href="#ceil" class="headerlink" title="ceil"></a>ceil</h6><ul>
+<li>返回大于等于参数的最小整数的double类型</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">ceil</span><span class="params">(<span class="keyword">double</span> a)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="floor"><a href="#floor" class="headerlink" title="floor"></a>floor</h6><ul>
+<li>返回小于等于参数的最小整数的double类型</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">floor</span><span class="params">(<span class="keyword">double</span> a)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="pow"><a href="#pow" class="headerlink" title="pow"></a>pow</h6><ul>
+<li>a的b次幂</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">pow</span><span class="params">(<span class="keyword">double</span> a,</span></span></span><br><span class="line"><span class="function"><span class="params">                         <span class="keyword">double</span> b)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="round"><a href="#round" class="headerlink" title="round"></a>round</h6><ul>
+<li>四舍五入到整数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">round</span><span class="params">(<span class="keyword">double</span> a)</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="七、System"><a href="#七、System" class="headerlink" title="七、System"></a>七、System</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object </span><br><span class="line">	java.lang.System </span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">System</span> <span class="keyword">extends</span> <span class="title">Object</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>System</code>类提供的<code>System</code>包括标准输入，标准输出和错误输出流;  </li>
+<li>访问外部定义的属性和环境变量; </li>
+<li>一种加载文件和库的方法;  </li>
+<li>以及用于快速复制阵列的一部分的实用方法。</li>
+</ul>
+<h5 id="方法-5"><a href="#方法-5" class="headerlink" title="方法"></a>方法</h5><h6 id="currentTimeMillis"><a href="#currentTimeMillis" class="headerlink" title="currentTimeMillis"></a>currentTimeMillis</h6><ul>
+<li>在1970年1月1日UTC之间的当前时间和午夜之间的差异，以毫秒为单位。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">currentTimeMillis</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="exit"><a href="#exit" class="headerlink" title="exit"></a>exit</h6><ul>
+<li>终止当前运行的Java虚拟机。 该参数作为状态代码; 按照惯例，非零状态码表示异常终止。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exit</span><span class="params">(<span class="keyword">int</span> status)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="gc"><a href="#gc" class="headerlink" title="gc"></a>gc</h6><ul>
+<li>调用gc方法表明，Java虚拟机花费了回收未使用对象的努力，以使其当前占用的内存可以快速重用。 当控件从方法调用返回时，Java虚拟机已经尽力从所有丢弃的对象中回收空间。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">gc</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="arraycopy"><a href="#arraycopy" class="headerlink" title="arraycopy"></a>arraycopy</h6><ul>
+<li>将指定源数组中的数组从指定位置复制到目标数组的指定位置</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">arraycopy</span><span class="params">(Object src, // 原数组</span></span></span><br><span class="line"><span class="function"><span class="params">                             <span class="keyword">int</span> srcPos, // 原数组开始复制的索引</span></span></span><br><span class="line"><span class="function"><span class="params">                             Object dest,// 目标数组</span></span></span><br><span class="line"><span class="function"><span class="params">                             <span class="keyword">int</span> destPos,// 复制到的目标数组的位置</span></span></span><br><span class="line"><span class="function"><span class="params">                             <span class="keyword">int</span> length)</span> <span class="comment">// 复制的原数组长度</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="八、BigDecimal"><a href="#八、BigDecimal" class="headerlink" title="八、BigDecimal"></a>八、BigDecimal</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java.lang.Object </span><br><span class="line">	java.lang.Number </span><br><span class="line">        java.math.BigDecimal </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BigDecimal</span> <span class="keyword">extends</span> <span class="title">Number</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">BigDecimal</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>基本类型计算会丢失精度，BigDecimal不会</li>
+</ul>
+<h5 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h5><h6 id="BigDecimal"><a href="#BigDecimal" class="headerlink" title="BigDecimal"></a>BigDecimal</h6><ul>
+<li>将指定类型转为BigDecimal</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">BigDecimal</span><span class="params">(String val)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">BigDecimal</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">BigDecimal</span><span class="params">(<span class="keyword">double</span> val)</span></span></span><br></pre></td></tr></table></figure>
+
+<h5 id="方法-6"><a href="#方法-6" class="headerlink" title="方法"></a>方法</h5><h6 id="abs-1"><a href="#abs-1" class="headerlink" title="abs"></a>abs</h6><ul>
+<li>返回一个 BigDecimal ，其值为此 BigDecimal的绝对值，其缩放比例为 this.scale() 。 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">abs</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="add-1"><a href="#add-1" class="headerlink" title="add"></a>add</h6><ul>
+<li>加法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">add</span><span class="params">(BigDecimal augend)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="compareTo-2"><a href="#compareTo-2" class="headerlink" title="compareTo"></a>compareTo</h6><ul>
+<li>小于，-1；等于，0；大于，1；</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(BigDecimal val)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="divide"><a href="#divide" class="headerlink" title="divide"></a>divide</h6><ul>
+<li>其值是(this / divisor) ，除法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">divide</span><span class="params">(BigDecimal divisor)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">divide</span><span class="params">(BigDecimal divisor,</span></span></span><br><span class="line"><span class="function"><span class="params">                         <span class="keyword">int</span> scale,  			// 保留几位小数</span></span></span><br><span class="line"><span class="function"><span class="params">                         <span class="keyword">int</span> roundingMode)</span>		<span class="comment">// </span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="max-1"><a href="#max-1" class="headerlink" title="max"></a>max</h6><ul>
+<li>返回最大值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">max</span><span class="params">(BigDecimal val)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="min-1"><a href="#min-1" class="headerlink" title="min"></a>min</h6><ul>
+<li>返回最小值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">min</span><span class="params">(BigDecimal val)</span></span></span><br></pre></td></tr></table></figure>
+
+<h6 id="subtract"><a href="#subtract" class="headerlink" title="subtract"></a>subtract</h6><ul>
+<li>减法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> BigDecimal <span class="title">subtract</span><span class="params">(BigDecimal subtrahend)</span></span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/myblog/2020/12/12/lambda/" rel="prev" title="Lambda">
+                  <i class="fa fa-chevron-left"></i> Lambda
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/myblog/2020/12/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="next" title="java基础">
+                  java基础 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>简体中文</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="">
+      
+        <option value="zh-CN" data-href="/myblog/2020/12/12/%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/myblog/en/2020/12/12/%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wst</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/myblog/js/utils.js"></script><script src="/myblog/js/motion.js"></script><script src="/myblog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
